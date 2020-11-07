@@ -1,0 +1,13 @@
+{% extends "homeworkhub_app/base.html" %}
+{% block content %}
+
+<div id="registerForm" class="ml-5 mt-4 surround">
+  <h3>You've been successfully logged out :)</h3>
+  <div class="pt-3">
+    <small class="text-muted">
+      Want to log back in again? <a class="ml-2" href="{% url 'login' %}">Log in!</a>
+    </small>
+  </div>
+</div>
+
+{% endblock content %}

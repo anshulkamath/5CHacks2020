@@ -1,7 +1,7 @@
 body {
   /* background-color: #d6e0f0; */
   background: linear-gradient(to right, #cedcf1 0%, #f3ceed 100%);
-  font-family: 'Roboto Mono', serif;
+  font-family: 'Comfortaa', serif;
   color: rgb(53, 53, 53);
 }
 
@@ -14,6 +14,8 @@ body {
 
 #registerForm {
   width: 50vw;
+  position: absolute;
+  left: 25vw;
 }
 
 .registerTitle {
@@ -23,4 +25,9 @@ body {
 .surround {
   background-color: rgba(0, 0, 0, 0.062);
   padding: 1.5vw;
+}
+
+.centerButtons {
+  width: 100vw;
+  text-align: center;
 }

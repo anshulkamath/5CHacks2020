@@ -7,19 +7,19 @@
     {% csrf_token %}
     <fieldset class="form-group">
       <legend class="mb-2 registerTitle">
-        Sign up!
+        Log in
       </legend>
       {{ form|crispy }}
     </fieldset>
     <div class="form-group">
       <button class="btn btn-light" type="submit">
-        Sign up
+        Log in
       </button>
     </div>
   </form>
   <div class="pt-3">
     <small class="text-muted">
-      Already have an account? <a class="ml-2" href="{% url 'login' %}">Log in!</a>
+      Don't have an account? <a class="ml-2" href="{% url 'register' %}">Sign up!</a>
     </small>
   </div>
 </div>
