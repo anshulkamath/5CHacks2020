@@ -1,0 +1,10 @@
+body {
+  background-color: #fffdd0;
+}
+
+.titleDiv {
+  text-align: center;
+  font-size: 3vw;
+  color: rgb(34, 34, 34);
+  width: 100vw;
+}
