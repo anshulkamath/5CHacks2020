@@ -1,5 +1,8 @@
 body {
-  background-color: #fffdd0;
+  /* background-color: #d6e0f0; */
+  background: linear-gradient(to right, #cedcf1 0%, #f3ceed 100%);
+  font-family: 'Roboto Mono', serif;
+  color: rgb(53, 53, 53);
 }
 
 .titleDiv {
@@ -7,4 +10,17 @@ body {
   font-size: 3vw;
   color: rgb(34, 34, 34);
   width: 100vw;
+}
+
+#registerForm {
+  width: 50vw;
+}
+
+.registerTitle {
+  font-size: 2vw;
+}
+
+.surround {
+  background-color: rgba(0, 0, 0, 0.062);
+  padding: 1.5vw;
 }
