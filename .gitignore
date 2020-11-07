@@ -3,6 +3,3 @@ venv/
 
 # DS Store
 .DS_Store
-
-# All pycaches
-*pycache/

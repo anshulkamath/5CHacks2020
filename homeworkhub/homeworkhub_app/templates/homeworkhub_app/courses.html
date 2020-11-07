@@ -1,0 +1,35 @@
+{% extends "homeworkhub_app/base.html" %}
+{% block content %}
+
+<div class="titleDiv mt-4">
+  Course Hub
+</div>
+
+{% if user.is_authenticated %}
+
+  <div class="courseListContainer surround mt-3">
+    <div class="myCourses mb-2">
+      My courses
+    </div>
+    {% for course in user.course_set.all %}
+    <div class="card courseCard mt-1">
+      {{course.name}}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="surround courseBigDiv mt-3">
+    {% for signal in batSignals %}
+      {{signal}}
+    {% endfor %}
+  </div>
+
+{% else %}
+
+Fuck you, you're not logged in >:(
+
+{% endif %}
+
+
+
+{% endblock content %}

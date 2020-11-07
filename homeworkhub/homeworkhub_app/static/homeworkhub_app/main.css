@@ -31,3 +31,25 @@ body {
   width: 100vw;
   text-align: center;
 }
+
+.courseBigDiv {
+  width: 54vw;
+  position: absolute;
+  left: 41vw;
+}
+
+.courseCard {
+  width: 30vw;
+  padding: 1vw;
+}
+
+.courseListContainer {
+  position: absolute;
+  left: 5vw;
+  width: 34vw;
+}
+
+.myCourses {
+  text-align: center;
+  font-size: 2vw;
+}

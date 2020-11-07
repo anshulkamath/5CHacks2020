@@ -14,4 +14,4 @@ class BatSignal(models.Model):
   active = models.BooleanField(default=False)
 
   def __str__(self):
-    return self.active
+    return self.user.username + ' active in ' + self.course.name + '? ' + str(self.active)
