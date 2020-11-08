@@ -1,0 +1,111 @@
+body {
+  /* background-color: #d6e0f0; */
+  background: linear-gradient(to right, #a7c3ec 0%, #f3ceed 100%);
+  font-family: 'Comfortaa', serif;
+  color: rgb(53, 53, 53);
+}
+
+.titleDiv {
+  text-align: center;
+  font-size: 3vw;
+  color: rgb(34, 34, 34);
+}
+
+#registerForm {
+  width: 50vw;
+  position: absolute;
+  left: 25vw;
+}
+
+.registerTitle {
+  font-size: 2vw;
+}
+
+.surround {
+  background-color: rgba(0, 0, 0, 0.062);
+  padding: 1.5vw;
+}
+
+.centerButtons {
+  width: 100vw;
+  text-align: center;
+}
+
+.courseBigDiv {
+  width: 54vw;
+  position: absolute;
+  left: 41vw;
+  font-family: 'Open Sans';
+}
+
+.courseCard {
+  width: 30vw;
+  padding: 1vw;
+  cursor: pointer;
+}
+
+.courseListContainer {
+  position: absolute;
+  left: 5vw;
+  width: 34vw;
+}
+
+.myCourses {
+  text-align: center;
+  font-size: 2vw;
+}
+
+.infoDiv {
+  width: 40vw;
+}
+
+.courseTitle {
+  text-align: center;
+  font-size: 2.5vw;
+  width: 100%;
+}
+
+.darkerSurround {
+  background-color: rgba(0, 0, 0, 0.616);
+  padding: 1.5vw;
+  color: white;
+}
+
+.student_active {
+  color: rgb(22, 233, 22);
+  font-weight: bold;
+}
+
+.student_deactive {
+  color: rgb(156, 156, 156);
+  font-weight: bold;
+}
+
+.selectedCard {
+  background-color: rgb(230, 230, 230);
+  font-weight: bold;
+}
+
+.toggler {
+  font-family: 'Open Sans';
+  width: 100%;
+}
+
+.toggleButtons {
+  width: 25vw;
+  position: absolute;
+  left: 37.6vw;
+}
+
+.classListCard {
+  padding: 1vw;
+}
+
+#homeTitle {
+  margin-top: 20vw;
+}
+
+#homeBlock {
+  /* background: linear-gradient(to right, #a7c3ec 0%, #f3ceed 100%); */
+  background: linear-gradient(to left, #d6e5ff 0%, #f3ceed 100%);
+}

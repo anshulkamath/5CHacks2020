@@ -2,34 +2,117 @@
 {% block content %}
 
 <div class="titleDiv mt-4">
-  Course Hub
+  Course Hub 
 </div>
 
 {% if user.is_authenticated %}
-
-  <div class="courseListContainer surround mt-3">
-    <div class="myCourses mb-2">
-      My courses
+  {% if user.profile.phone_number|length == 0 %}
+    <div style="width: 100%; text-align: center;">
+      You need a phone number to access this! You can set that <a href="{% url 'profile' %}">here</a>.
     </div>
-    {% for course in user.course_set.all %}
-    <div class="card courseCard mt-1">
-      {{course.name}}
+  {% else %}
+  <div class="toggler mb-4 mt-2">
+    <div class="btn-group btn-group-toggle toggleButtons" data-toggle="buttons">
+      <label class="btn btn-light active">
+        <input type="radio" name="options" id="myCoursesOption" autocomplete="off" checked> My courses
+      </label>
+      <label class="btn btn-light">
+        <input type="radio" name="options" id="otherCoursesOption" autocomplete="off"> Other courses
+      </label>
     </div>
-    {% endfor %}
   </div>
-
-  <div class="surround courseBigDiv mt-3">
-    {% for signal in batSignals %}
-      {{signal}}
-    {% endfor %}
+  <div id="myCoursesHub">
+  
+    <div class="courseListContainer surround mt-5">
+      <div class="myCourses mb-2">
+        My courses
+      </div>
+      {% for course in user.course_set.all %}
+        <div class="card courseCard leftHandCard mt-2" data-coursename="{{ course.name }}">
+          <!-- Iterate through all your courses -->
+          {{course.name}}
+        </div>
+      {% endfor %}
+    </div>
+  
+    <div class="darkerSurround courseBigDiv mt-5" id="infoContainer">
+      <span id="selectACourse">
+        Select a course on the left to get started!
+      </span>
+      {% for bs in user.batsignal_set.all %}
+        {% with course=bs.course %}
+        <div class="infoDiv" id="courseinfo_{{ course.name }}" style="display:none; width:100%;">
+          <div class="courseTitle" style="width:100%;">
+            {{course.name}}
+          </div>
+          <br>
+          <!-- Iterate through all the students in that course -->
+          {% for student in course.students.all %}
+            <!-- Iterate through each students' bat signals -->
+            {% for signal in student.batsignal_set.all %}
+              <!-- Check that this bat signal is relevant and not you -->
+              {% if signal.course.name == course.name and student.username != user.username %}
+                <b>{{student.username}}</b>: 
+                {% if signal.active %}
+                  <span class="student_active">Active</span> ({{ student.profile.phone_number }})
+                {% else %}
+                <span class="student_deactive">Not active</span>
+                {% endif %}
+                <br>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+          <br>
+          {% if bs.active == True %}
+            <div style="text-align: center;">
+              <a class="btn btn-danger" href="{% url 'update_deactive' pk=bs.pk %}">I'm not working on this class anymore</a>
+            </div>
+          {% else %}
+            <div style="text-align: center;">
+              <a class="btn btn-success" href="{% url 'update_active' pk=bs.pk %}">I'm working on this class!</a>
+            </div>
+          {% endif %}
+        </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
   </div>
-
+  <div id="otherCoursesHub" style="display: none;">
+    <div class="courseListContainer surround mt-5">
+      <div class="myCourses mb-2">
+        All courses
+      </div>
+      {% for course in courses %}
+        <div class="card classListCard mb-2">
+          <div class="row" style="padding: 0vw; padding-left: 2vw;">
+            <div style="display: inline-block; width:40%;">
+              {{ course.name }}
+            </div>
+            {% if not course in user.course_set.all %}
+            <div style="display: inline-block; width:20%; position: absolute; right: 1vw;">
+              <a class="btn btn-dark" style="width: 100%; font-size: .75vw;" href="{% url 'addCourse' pk1=course.pk pk2=user.pk %}">
+                ADD
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
 {% else %}
-
-Fuck you, you're not logged in >:(
-
+<div class="mt-3" style="text-align: center;">
+  Sorry, you need to be logged in to view this page!
+  <br>
+  <a class="btn btn-light mt-4" href="{% url 'login' %}">
+    Click here to log in
+  </a>
+  <br>
+  <a class="btn btn-light mt-2" href ="{% url 'register' %}">
+    Click here to sign up
+  </a>
+</div>
 {% endif %}
-
-
 
 {% endblock content %}

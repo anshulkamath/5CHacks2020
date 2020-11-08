@@ -1,6 +1,6 @@
 body {
   /* background-color: #d6e0f0; */
-  background: linear-gradient(to right, #cedcf1 0%, #f3ceed 100%);
+  background: linear-gradient(to right, #a7c3ec 0%, #f3ceed 100%);
   font-family: 'Comfortaa', serif;
   color: rgb(53, 53, 53);
 }
@@ -9,7 +9,6 @@ body {
   text-align: center;
   font-size: 3vw;
   color: rgb(34, 34, 34);
-  width: 100vw;
 }
 
 #registerForm {
@@ -36,11 +35,15 @@ body {
   width: 54vw;
   position: absolute;
   left: 41vw;
+  font-family: 'Open Sans';
 }
 
 .courseCard {
   width: 30vw;
   padding: 1vw;
+  cursor: pointer;
+  height: 4vw;
+  padding-left: 2vw;
 }
 
 .courseListContainer {
@@ -52,4 +55,81 @@ body {
 .myCourses {
   text-align: center;
   font-size: 2vw;
+}
+
+.infoDiv {
+  width: 40vw;
+}
+
+.courseTitle {
+  text-align: center;
+  font-size: 2.5vw;
+  width: 100%;
+}
+
+.darkerSurround {
+  background-color: rgba(0, 0, 0, 0.616);
+  padding: 1.5vw;
+  color: white;
+}
+
+.student_active {
+  color: rgb(22, 233, 22);
+  font-weight: bold;
+}
+
+.student_deactive {
+  color: rgb(156, 156, 156);
+  font-weight: bold;
+}
+
+.selectedCard {
+  background-color: rgb(230, 230, 230);
+  font-weight: bold;
+}
+
+.toggler {
+  font-family: 'Open Sans';
+  width: 100%;
+}
+
+.toggleButtons {
+  width: 25vw;
+  position: absolute;
+  left: 37.6vw;
+}
+
+.classListCard {
+  padding: 1vw;
+  height: 4vw;
+  width: 30vw;
+}
+
+#homeTitle {
+  position: absolute;
+  top: 13vw;
+  width: 100vw;
+  text-align: center;
+  font-size: 5vw;
+}
+
+#homeSubtitle {
+  position: absolute;
+  top: 21vw;
+  width: 100vw;
+  text-align: center;
+  font-size: 2vw;
+}
+
+#homeBlock {
+  /* background: linear-gradient(to right, #a7c3ec 0%, #f3ceed 100%); */
+  background: linear-gradient(to left, #d6e5ff 0%, #f3ceed 100%);
+}
+
+#notebookImage {
+  width: 10vw;
+  height: 10vw;
+  position: absolute;
+  left: 45vw;
+  top: 24vw;
 }

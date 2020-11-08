@@ -1,10 +1,28 @@
 {% extends "homeworkhub_app/base.html" %}
 {% block content %}
 
+<div id="homeTitle"><strong>Meet Homework Hub</strong></div>
+<div id="homeSubtitle">Do homework, make friends.</div>
 
-<div class="titleDiv mt-4">
-  Homework Hub
+<img id="notebookImage" src="https://www.flaticon.com/svg/static/icons/svg/2196/2196561.svg">
+
+
+{% if not user.is_authenticated %}
+
+<div style="text-align: center; position:absolute; bottom: 5vw; width: 50vw; left: 25vw;">
+  <br class="text-center">
+  <text style="color:white; font-style: bold;"> •• </text>
+  <a class="btn btn-light" href="{% url 'register' %}">
+    Sign up
+  </a>
+  <text style="color:white; font-style: bold;"> •• </text>
+  <a class="btn btn-light" href="{% url 'login' %}">
+    Log in
+  </a>
+  <text style="color:white; font-style: bold;"> •• </text>
 </div>
+
+{% endif %}
 
 <!-- {% for course in courses %}
   <h1>{{course.name}}</h1>
@@ -13,5 +31,7 @@
 <!-- <form method="get" action="register/">
   <button type="submit">Sign up / in!</button>
 </form> -->
+
+
 
 {% endblock content %}
